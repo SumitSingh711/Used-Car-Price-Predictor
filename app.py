@@ -61,11 +61,6 @@ name = st.selectbox(
      options=X_train.name.unique()
 )
 
-company = st.selectbox(
-     'Car Brand',
-     options=X_train.company.unique()
-)
-
 # Create a number input for the year
 year = st.number_input(
     "Model Year:",
