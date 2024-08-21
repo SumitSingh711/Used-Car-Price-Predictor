@@ -7,7 +7,7 @@ import joblib
 import pandas as pd
 
 import streamlit as st
-
+import random
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -56,15 +56,23 @@ st.title('Used Car Prediction Streamlit')
 
 # user inputs
 
-name = st.selectbox(
-     'Model Name',
-     options=X_train.name.unique()
-)
-
 company = st.selectbox(
      'Car Brand',
      options=X_train.company.unique()
 )
+
+# Step 2: Conditionally display the name dropdown based on the company selected
+# if company != "Select":
+#     name = st.selectbox("Select Car Name", options=X_train.name.unique())
+# else:
+#     name = st.selectbox("Select Car Name", options=["Please select a company first"], disabled=True)
+
+if company:
+    car_names = X_train[X_train['company'] == company]['name'].unique()
+
+    # Step 3: Display the filtered car names in the "Name" dropdown
+    selected_name = st.selectbox("Select Car Name", options=car_names)
+
 
 # Create a number input for the year
 year = st.number_input(
@@ -87,7 +95,7 @@ fuel_type = st.selectbox(
 
 
 x_new = pd.DataFrame(dict(
-	name = [name],
+	name = [selected_name],
 	company=[company],
 	year=[year],
 	kms_driven=[kms_driven],
