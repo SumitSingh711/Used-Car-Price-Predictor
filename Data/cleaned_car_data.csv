@@ -1,4 +1,4 @@
-,name,company,year,Price,kms_driven,fuel_type
+,name,company,year,price,kms_driven,fuel_type
 0,Hyundai Santro Xing,Hyundai,2007,80000,45000,Petrol
 1,Mahindra Jeep CL550,Mahindra,2006,425000,40,Diesel
 2,Hyundai Grand i10,Hyundai,2014,325000,28000,Petrol
@@ -444,7 +444,6 @@
 442,Chevrolet Cruze LTZ,Chevrolet,2014,400000,41000,Diesel
 443,Hyundai Verna Fluidic,Hyundai,2015,430000,73000,Diesel
 444,Maruti Suzuki Swift,Maruti,2011,140000,65000,Diesel
-445,Mahindra XUV500 W6,Mahindra,2014,8500003,45000,Diesel
 446,Mahindra XUV500 W10,Mahindra,2018,1299000,40000,Diesel
 447,Maruti Suzuki Alto,Maruti,2014,199000,37000,Petrol
 448,Hyundai Accent GLE,Hyundai,2006,90000,55000,Petrol
